@@ -4,7 +4,4 @@ abstract class GameObject implements Drawable, Updatable {
   GameObject(float x, float y) {
     position = new PVector(x, y);
   }
-  
-  void update() {} 
-  void display() {} 
 }
