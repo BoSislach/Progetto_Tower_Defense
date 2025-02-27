@@ -46,7 +46,7 @@ if (frameCount % 120 == 0) {
 
   for (int i = projectiles.size()-1; i >= 0; i--) {
     Projectile p = projectiles.get(i);
-    if (p.shouldRemove) {
+    if (p.remove) {
       projectiles.remove(i);
     }
   }
