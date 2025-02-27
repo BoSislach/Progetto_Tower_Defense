@@ -8,22 +8,21 @@ class BasicEnemy extends Enemy {
     ellipse(position.x, position.y, 20, 20);
   }
   
+  void update() {
+    move();
+  }
+  
   void move() {
-  if (pathIndex < path.size()) {
-    PVector target = path.get(pathIndex);
-    PVector direction = PVector.sub(target, position);
-    if (direction.mag() < speed) {
-      position = target.copy();
-      pathIndex++;
-    } else {
-      direction.setMag(speed);
-      position.add(direction);
+    if (pathIndex < path.size()) {
+      PVector target = path.get(pathIndex);
+      PVector direction = PVector.sub(target, position);
+      if (direction.mag() < speed) {
+        position = target.copy();
+        pathIndex++;
+      } else {
+        direction.setMag(speed);
+        position.add(direction);
+      }
     }
   }
-}
-
-void update() {
-  move();
-}
-
 }
