@@ -18,4 +18,14 @@ void draw() {
   beginShape();
   for (PVector p : path) vertex(p.x, p.y);
   endShape();
+
+if (frameCount % 120 == 0) {
+    enemies.add(new BasicEnemy(-50, 300));
+  }
+  
+  for (Enemy e : enemies) {
+    e.display();
+  }
+}
+
 }
