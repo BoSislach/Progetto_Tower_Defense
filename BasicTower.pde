@@ -4,8 +4,9 @@ class BasicTower extends Tower {
   }
   
   void display() {
-    fill(0, 255, 0);
-    rect(position.x - 15, position.y - 15, 30, 30);
+    fill(0, 200, 0);
+    stroke(0);
+    rect(position.x - 15, position.y - 15, 30, 30, 5);
   }
   
   void update() {}
