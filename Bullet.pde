@@ -10,7 +10,7 @@ class Bullet extends Projectile {
 
 void update() {
   if (target == null) {
-    shouldRemove = true;
+    remove = true;
     return;
   }
   
@@ -21,7 +21,7 @@ void update() {
 
   void update() {
   if (target == null || !enemies.contains(target)) {
-    shouldRemove = true;
+    remove = true;
     return;
   }
   
@@ -30,7 +30,7 @@ void update() {
   
   if (distance < speed) {
     target.takeDamage(damage);
-    shouldRemove = true;
+    remove = true;
   } else {
     direction.setMag(speed);
     position.add(direction);
