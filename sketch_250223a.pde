@@ -15,28 +15,24 @@ void setup() {
 }
 
 void draw() {
-  strokeWeight(3);
+  background(51);
+  stroke(200);
+  noFill();
   beginShape();
   for (PVector p : path) vertex(p.x, p.y);
   endShape();
-  strokeWeight(1);
-
-if (frameCount % 120 == 0) {
+  
+  if (frameCount % 120 == 0) {
     enemies.add(new BasicEnemy(-50, 300));
   }
+
+  updateAndDisplay(towers);
+  updateAndDisplay(projectiles);
   
-  for (Enemy e : enemies) {
-    e.display();
-  }
-
- updateAndDisplay(enemies);
- updateAndDisplay(towers);
- updateAndDisplay(projectiles);
-
- for (Tower tower : towers) 
-  {
+  for (Tower tower : towers) {
     tower.attack(enemies);
   }
+
   for (int i = enemies.size()-1; i >= 0; i--) {
     Enemy enemy = enemies.get(i);
     if (enemy.health <= 0 || enemy.pathIndex >= path.size()) {
@@ -51,6 +47,7 @@ if (frameCount % 120 == 0) {
     }
   }
 }
+
 
 
 void updateAndDisplay(ArrayList<?> list) {
