@@ -26,6 +26,9 @@ void draw() {
     enemies.add(new BasicEnemy(-50, 300));
   }
 
+  // Aggiungi questa linea per aggiornare e visualizzare i nemici
+  updateAndDisplay(enemies);
+  
   updateAndDisplay(towers);
   updateAndDisplay(projectiles);
   
@@ -47,9 +50,6 @@ void draw() {
     }
   }
 }
-
-
-
 void updateAndDisplay(ArrayList<?> list) {
   for (Object obj : list) {
     if (obj instanceof Updatable) {
