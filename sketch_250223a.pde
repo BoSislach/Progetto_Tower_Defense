@@ -15,12 +15,11 @@ void setup() {
 }
 
 void draw() {
-  background(51);
-  stroke(200);
-  noFill();
+  strokeWeight(3);
   beginShape();
   for (PVector p : path) vertex(p.x, p.y);
   endShape();
+  strokeWeight(1);
 
 if (frameCount % 120 == 0) {
     enemies.add(new BasicEnemy(-50, 300));
