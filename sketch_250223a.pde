@@ -29,6 +29,7 @@ if (frameCount % 120 == 0) {
   }
 
  updateAndDisplay(enemies);
+ updateAndDisplay(towers);
 }
 
 void updateAndDisplay(ArrayList<?> list) {
