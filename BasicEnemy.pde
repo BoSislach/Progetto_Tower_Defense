@@ -9,6 +9,21 @@ class BasicEnemy extends Enemy {
   }
   
   void move() {
-    
+  if (pathIndex < path.size()) {
+    PVector target = path.get(pathIndex);
+    PVector direction = PVector.sub(target, position);
+    if (direction.mag() < speed) {
+      position = target.copy();
+      pathIndex++;
+    } else {
+      direction.setMag(speed);
+      position.add(direction);
+    }
   }
+}
+
+void update() {
+  move();
+}
+
 }
