@@ -26,6 +26,19 @@ if (frameCount % 120 == 0) {
   for (Enemy e : enemies) {
     e.display();
   }
+
+ updateAndDisplay(enemies);
 }
 
+void updateAndDisplay(ArrayList<?> list) {
+  for (Object obj : list) {
+    if (obj instanceof Updatable) {
+      ((Updatable) obj).update();
+    }
+    if (obj instanceof Drawable) {
+      ((Drawable) obj).display();
+    }
+  }
 }
+
+
