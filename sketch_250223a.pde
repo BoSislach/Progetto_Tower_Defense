@@ -1,4 +1,5 @@
 ArrayList<PVector> path = new ArrayList<>();
+ArrayList<Enemy> enemies = new ArrayList<>();
 
 void setup() {
   size(800, 600);
