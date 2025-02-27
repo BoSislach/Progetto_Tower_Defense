@@ -42,4 +42,9 @@ void updateAndDisplay(ArrayList<?> list) {
   }
 }
 
+void mousePressed() {
+  towers.add(new BasicTower(mouseX, mouseY));
+}
+
+
 
