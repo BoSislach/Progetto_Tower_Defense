@@ -9,4 +9,16 @@ class BasicTower extends Tower {
   }
   
   void update() {}
+
+void attack(ArrayList<Enemy> enemies) {
+  if (millis() - lastShot < cooldown) return;
+  
+  for (Enemy enemy : enemies) {
+    if (isEnemyInRange(enemy)) {
+      projectiles.add(new Bullet(position.x, position.y, enemy));
+      lastShot = millis();
+      break;
+    }
+  }
+}
 }
