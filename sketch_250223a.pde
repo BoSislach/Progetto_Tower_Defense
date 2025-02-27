@@ -31,6 +31,13 @@ if (frameCount % 120 == 0) {
 
  updateAndDisplay(enemies);
  updateAndDisplay(towers);
+ updateAndDisplay(projectiles);
+
+ for (Tower tower : towers) 
+  {
+    tower.attack(enemies);
+  }
+  
 }
 
 void updateAndDisplay(ArrayList<?> list) {
