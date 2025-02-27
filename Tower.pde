@@ -15,5 +15,5 @@ abstract class Tower extends GameObject {
       return PVector.dist(position, enemy.position) <= range;
     }
   }
-
+}
   
