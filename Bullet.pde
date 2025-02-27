@@ -19,14 +19,16 @@ void update() {
   position.add(direction);
   }
 
-void update() {
+  void update() {
   if (target == null || !enemies.contains(target)) {
     shouldRemove = true;
     return;
   }
   
   PVector direction = PVector.sub(target.position, position);
-  if (direction.mag() < speed) {
+  float distance = direction.mag();
+  
+  if (distance < speed) {
     target.takeDamage(damage);
     shouldRemove = true;
   } else {
