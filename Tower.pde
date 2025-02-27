@@ -9,3 +9,5 @@ abstract class Tower extends GameObject {
     this.cooldown = cooldown;
     this.lastShot = 0;
   }
+
+  abstract void attack(ArrayList<Enemy> enemies);
