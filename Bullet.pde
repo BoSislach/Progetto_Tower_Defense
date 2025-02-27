@@ -17,5 +17,21 @@ void update() {
   PVector direction = PVector.sub(target.position, position);
   direction.setMag(speed);
   position.add(direction);
+  }
+
+void update() {
+  if (target == null || !enemies.contains(target)) {
+    shouldRemove = true;
+    return;
+  }
+  
+  PVector direction = PVector.sub(target.position, position);
+  if (direction.mag() < speed) {
+    target.takeDamage(damage);
+    shouldRemove = true;
+  } else {
+    direction.setMag(speed);
+    position.add(direction);
+  }
 }
 }
