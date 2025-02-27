@@ -37,8 +37,21 @@ if (frameCount % 120 == 0) {
   {
     tower.attack(enemies);
   }
-  
+  for (int i = enemies.size()-1; i >= 0; i--) {
+    Enemy enemy = enemies.get(i);
+    if (enemy.health <= 0 || enemy.pathIndex >= path.size()) {
+      enemies.remove(i);
+    }
+  }
+
+  for (int i = projectiles.size()-1; i >= 0; i--) {
+    Projectile p = projectiles.get(i);
+    if (p.shouldRemove) {
+      projectiles.remove(i);
+    }
+  }
 }
+
 
 void updateAndDisplay(ArrayList<?> list) {
   for (Object obj : list) {
@@ -51,12 +64,7 @@ void updateAndDisplay(ArrayList<?> list) {
   }
 }
 
-for (int i = enemies.size()-1; i >= 0; i--) {
-    Enemy enemy = enemies.get(i);
-    if (enemy.health <= 0 || enemy.pathIndex >= path.size()) {
-      enemies.remove(i);
-    }
-  }
+
 
 void mousePressed() {
   towers.add(new BasicTower(mouseX, mouseY));
