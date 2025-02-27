@@ -7,4 +7,15 @@ class Bullet extends Projectile {
     fill(255);
     ellipse(position.x, position.y, 5, 5);
   }
+
+void update() {
+  if (target == null) {
+    shouldRemove = true;
+    return;
+  }
+  
+  PVector direction = PVector.sub(target.position, position);
+  direction.setMag(speed);
+  position.add(direction);
+}
 }
