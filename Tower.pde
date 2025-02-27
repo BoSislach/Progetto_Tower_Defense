@@ -8,12 +8,12 @@ abstract class Tower extends GameObject {
     this.range = range;
     this.cooldown = cooldown;
     this.lastShot = 0;
+  }
 
     abstract void attack(ArrayList<Enemy> enemies);
 
     boolean isEnemyInRange(Enemy enemy) {
       return PVector.dist(position, enemy.position) <= range;
     }
-  }
 }
   
