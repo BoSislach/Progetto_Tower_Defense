@@ -49,3 +49,7 @@ Il codice è suddiviso in diverse classi per gestire i vari elementi del gioco i
 - [x] Sistema di gestione delle vite e delle risorse.
 - [x] Struttura modulare per future espansioni.
 
+## UML
+![Screenshot 2025-02-27 230221](https://github.com/user-attachments/assets/93bf6278-4e2e-4e50-a096-eee751d90e9f)
+
+
