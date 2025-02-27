@@ -51,6 +51,13 @@ void updateAndDisplay(ArrayList<?> list) {
   }
 }
 
+for (int i = enemies.size()-1; i >= 0; i--) {
+    Enemy enemy = enemies.get(i);
+    if (enemy.health <= 0 || enemy.pathIndex >= path.size()) {
+      enemies.remove(i);
+    }
+  }
+
 void mousePressed() {
   towers.add(new BasicTower(mouseX, mouseY));
 }
