@@ -12,3 +12,4 @@ abstract class Projectile extends GameObject {
     this.remove = false;
   }
 }
+
