@@ -12,8 +12,7 @@ abstract class Enemy extends GameObject {
   
   abstract void move();
 
-void takeDamage(float damage) {
-  health -= damage;
-}
-
+    void takeDamage(float damage) {
+      health -= damage;
+    }
 }
