@@ -14,6 +14,7 @@ void setup() {
   path.add(new PVector(800, 100));
 }
 
+
 void draw() {
   background(51);
   stroke(200);
